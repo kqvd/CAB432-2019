@@ -1,0 +1,16 @@
+{
+  "name": "cab432-asgn1",
+  "version": "1.0.0",
+  "description": "Assignment 1 Web Mashup Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "app.js"
+  },
+  "author": "Kevin Duong <n9934731@qut.edu.au>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-server": "^0.11.1",
+    "pug": "^2.0.4"
+  }
+}

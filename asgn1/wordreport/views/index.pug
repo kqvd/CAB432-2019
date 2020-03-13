@@ -1,0 +1,45 @@
+extends templates/layout1
+
+block content
+    // Page content
+    .w3-main(style='margin-top:43px;')
+      // Header
+      header.w3-row(style='padding-top:22px;')
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%; text-align: center')
+          h1
+            b Welcome to WordReport
+          h3 See important keywords reported across the world.
+          img.responsive(src='/img/worldmap.jpg' alt='World Map')
+        .w3-col(style='width:20%')
+          p
+      br
+      .w3-row
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%')
+          // Make sure the form has the autocomplete function switched off:
+          form(autocomplete='off' method='POST' action='/submit' onsubmit='return getCountry()')
+            .categories
+             h4
+              b Categories
+              br
+              a(href='words/business' onClick="loadAnimation()") business | 
+              a(href='words/entertainment' onClick="loadAnimation()") entertainment | 
+              a(href='words/general' onClick="loadAnimation()") general | 
+              a(href='words/health' onClick="loadAnimation()") health | 
+              a(href='words/science' onClick="loadAnimation()") science | 
+              a(href='words/sports' onClick="loadAnimation()") sports | 
+              a(href='words/technology' onClick="loadAnimation()") technology
+            .autocomplete(style='width: 100%;')
+              input#myInput(type='text' name='myCountry' placeholder='Country' required='')
+            br
+            br
+            .buttonHolder
+              input.w3-button.w3-black(type='submit' value='Search')
+        .w3-col(style='width:20%')
+          p
+      // Loading Animation
+      #loadingAnimation
+      #loadingText

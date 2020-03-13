@@ -1,0 +1,171 @@
+html, body, h1, h2, h3, h4, h5 {
+    font-family: "Raleway", sans-serif
+}
+
+.container {
+    max-width: 100%;
+    height: auto;
+}
+    /* resize images */
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px Arial;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+/* Fixed footer */
+#footerfixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+/* Scroll footer */
+#footerscroll {
+    position: absolute;
+    right: 0;
+    bottom: 1;
+    left: 0;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+}
+
+.responsive {
+    width: 50%;
+    height: auto;
+}
+
+.categories {
+    text-align: center;
+}
+/*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+input {
+    border: 1px solid black;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+    input[type=text] {
+        background-color: white;
+        width: 100%;
+    }
+
+.buttonHolder {
+    text-align: center;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+    }
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+            background-color: #e9e9e9;
+        }
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+/* Error page */
+#center {
+    margin-top: 30%;
+}
+
+/*loading animation*/
+#loadingAnimation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loadingText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+    .lds-facebook div {
+        display: inline-block;
+        position: absolute;
+        left: 6px;
+        width: 13px;
+        background: black;
+        animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    }
+
+        .lds-facebook div:nth-child(1) {
+            left: 6px;
+            animation-delay: -0.24s;
+        }
+
+        .lds-facebook div:nth-child(2) {
+            left: 26px;
+            animation-delay: -0.12s;
+        }
+
+        .lds-facebook div:nth-child(3) {
+            left: 45px;
+            animation-delay: 0;
+        }
+
+@keyframes lds-facebook {
+    0% {
+        top: 6px;
+        height: 51px;
+    }
+
+    50%, 100% {
+        top: 19px;
+        height: 26px;
+    }
+}

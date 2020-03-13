@@ -1,0 +1,27 @@
+doctype html
+// Header
+head
+  title #{title}
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' href='/css/styles.css' type='text/css')
+// Top container
+.w3-bar.w3-top.w3-black.w3-large(style='z-index:4')
+  span.w3-bar-item.w3-right
+    b
+      i.fa.fa-bar-chart
+      a(href='/') WordReport
+// Generic Content
+block content
+br
+// Footer (Fixed)
+#footerfixed.w3-container.w3-black.w3-padding-16
+  br
+  ul
+    li Creator: Kevin Duong
+    li Email: kq.duong@connect.qut.edu.au
+// End page content
+script(src='/js/index.js')

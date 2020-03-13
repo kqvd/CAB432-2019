@@ -1,0 +1,96 @@
+extends templates/layout1
+
+block content
+    // Page content
+    .w3-main(style='margin-top:43px;')
+      // Header
+      header.w3-row(style='padding-top:22px;')
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%; text-align: center')
+          h1
+            b Words That Makes News
+        .w3-col(style='width:20%')
+          p
+      br
+      .w3-row
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%')
+          h5
+            Trending Keywords in: 
+            b  #{abbreviation.toUpperCase()}
+          // Keyword results
+          table#app.w3-table.w3-striped.w3-hoverable.w3-white
+           include html/words.html
+            
+        .w3-col(style='width:20%')
+          p
+      .w3-row
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%')
+          h5 Select a Country
+          form(method='POST' action='/submit' onsubmit='return loadAnimation()')
+            select#list(name='myCountry')
+              option(value='ar') Argentina
+              option(value='au') Australia
+              option(value='at') Austria
+              option(value='be') Belgium
+              option(value='br') Brazil
+              option(value='bg') Bulgaria
+              option(value='ca') Canada
+              option(value='co') Colombia
+              option(value='cu') Cuba
+              option(value='cz') Czech Republic
+              option(value='eg') Egypt
+              option(value='fr') France
+              option(value='de') Germany
+              option(value='gr') Greece
+              option(value='hk') Hong Kong
+              option(value='hu') Hungary
+              option(value='in') India
+              option(value='id') Indonesia
+              option(value='ie') Ireland
+              option(value='il') Israel
+              option(value='it') Italy
+              option(value='jp') Japan
+              option(value='lv') Latvia
+              option(value='lt') Lithuania
+              option(value='my') Malaysia
+              option(value='mx') Mexico
+              option(value='ma') Morocco
+              option(value='nl') Netherlands
+              option(value='nz') New Zealand
+              option(value='ng') Nigeria
+              option(value='no') Norway
+              option(value='ph') Philippines
+              option(value='pl') Poland
+              option(value='pt') Portugal
+              option(value='ro') Romania
+              option(value='ru') Russia
+              option(value='sa') Saudi Arabia
+              option(value='rs') Serbia
+              option(value='sg') Singapore
+              option(value='sk') Slovakia
+              option(value='si') Slovenia
+              option(value='za') South Africa
+              option(value='kr') South Korea
+              option(value='se') Sweden
+              option(value='ch') Switzerland
+              option(value='tw') Taiwan
+              option(value='th') Thailand
+              option(value='tr') Turkey
+              option(value='ae') UAE
+              option(value='ua') Ukraine
+              option(value='gb') United Kingdom
+              option(value='us') United States
+              option(value='ve') Venuzuela
+            br
+            br
+            input.w3-button.w3-black(type='submit' value='Search')
+            // Loading Animation
+            #loadingAnimation
+            #loadingText
+        .w3-col(style='width:20%')
+          p

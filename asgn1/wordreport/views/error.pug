@@ -1,0 +1,12 @@
+extends templates/layout1
+
+block content
+    .w3-col(style='width:20%')
+        p
+    .w3-col(style='width:60%; text-align: center')
+        #center
+         p 
+          b #{message}
+         input.w3-button.w3-black(type='button' value='Go Back' onClick="location.href='/';")
+    .w3-col(style='width:20%')
+        p

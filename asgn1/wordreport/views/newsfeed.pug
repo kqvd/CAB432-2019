@@ -1,0 +1,33 @@
+extends templates/layout2
+
+block content
+    // Page Content
+    .w3-main(style='margin-top:43px;')
+      // Header
+      header.w3-row(style='padding-top:22px;')
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%; text-align: center')
+          h1
+            b News Articles about: #{term.toUpperCase()} 
+        .w3-col(style='width:20%')
+          p
+      .w3-row
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%')
+          h5 Search Results: #{quantity} 
+          hr
+          // News Feed
+          include html/news.html
+          
+        .w3-col(style='width:20%')
+          p
+      .w3-row
+        .w3-col(style='width:20%')
+          p
+        .w3-col(style='width:60%')
+          br
+          input.w3-button.w3-black(type='button' value='Go Back' onClick="javascript:history.go(-1)")
+        .w3-col(style='width:20%')
+          p
