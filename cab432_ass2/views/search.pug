@@ -1,0 +1,49 @@
+extends layout
+
+block append head
+    if tweets.length > 0
+        script var lastTweetId = #{tweets[0].id};
+    script var tweetCount = #{tweets.length}
+    script var searchQuery = '#{query}';
+    script(src='/javascript/livefilter.js')
+
+block searchbar
+    nav.navbar.navbar-dark
+        a.navbar-brand(href=".") Twitter Sentiment Analysis
+        form.form-inline(method="GET", action='/search', onsubmit='return validation()')
+            input.col-9.form-control#myInput(required=true, name='search', type='search')
+            button.col-3.btn.btn-outline-info(type='submit') Search
+    #error Invalid Query Submission! Please insert a &apos;#&apos; in front of a query and leave a &apos;,&apos; after each word.
+
+block content
+    br
+    // Search results
+    .container
+        div.inline-block
+            h3
+                span.text-white Results for 
+                span#searchQuery.text-primary #{query}
+                span.text-white ... #{url}
+        div.row.justify-content-between
+            button.btn.btn-danger.float-left.col-2#stopLiveFeedButton(type='button' onclick="stopFeed();") Cancel Livefeed
+            button.btn.btn-info.float-right.col-2(type='button' onclick="openSummary();") Tweets Summary
+
+    div.container#tweetsContainer
+        if tweets.length == 0
+            h4.text-white.text-center No results found...
+        else
+            each tweet in tweets
+                div.row
+                    div.card.bg-dark.border-info.mb-3.tweet-card.col-10
+                        div.card-body
+                            h5.card-title.text-white= tweet.user_name
+                            a(href=tweet.user_url)
+                                h6.card-subtitle.text-primary.mb-2 @#{tweet.user_screen_name}
+                            p#tweet.card-text.text-white= tweet.text
+                        div.card-body
+                            a.text-primary(href=tweet.url)= tweet.display_url
+                            p.card-text.text-muted= tweet.date
+                    div.card.bg-dark.border-info.mb-3.tweet-card.col-2
+                        div.card-body.text-white
+                            h5.card-title Sentiment
+                            p#sentiment.card-text= tweet.sentiment

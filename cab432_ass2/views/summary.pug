@@ -1,0 +1,45 @@
+extends layout
+
+block append head
+    // amCharts 4
+    script(src='https://www.amcharts.com/lib/4/core.js')
+    script(src='https://www.amcharts.com/lib/4/charts.js')
+    script(src='https://www.amcharts.com/lib/4/plugins/wordCloud.js')
+    script(src='https://www.amcharts.com/lib/4/themes/animated.js')
+
+block searchbar
+    nav.navbar.navbar-dark
+        a.navbar-brand(href=".") Twitter Sentiment Analysis
+        form.form-inline(method="GET", action='/search', onsubmit='return validation()')
+            input.col-9.form-control#myInput(required=true, name='search', type='search')
+            button.col-3.btn.btn-outline-info(type='submit') Search
+    #error Invalid Query Submission! Please insert a &apos;#&apos; in front of a query and leave a &apos;,&apos; after each word.
+
+block content
+    br
+    div.container
+        div.row
+            div.card.bg-dark.border-info.mb-3.tweet-card.col-12
+                div.card-body.text-white
+                    span.inline-block
+                        h3
+                            span#description.text-white Hashtag Summary for 
+                            span#searchQuery.text-primary #{query}
+                            span.text-white ...
+
+                    #chartdiv
+        div.row
+            div.card.bg-dark.border-info.mb-3.tweet-card.col-12
+                div.card-body.text-white
+                    h5.card-title Average Sentiment
+                    p.card-text #{avg}
+                div.card-body.text-white
+                    h5.card-title Number of feeds captured: #{num}
+                    button.btn.btn-primary#hashtagSummary(disabled='', type='button' onclick="hashtagSummary()") View Hashtags
+                    button.btn.btn-info#wordSummary(type='button' onclick="wordSummary()") View Words
+    
+    script.  
+        var hashtags = "#{hashtags}";
+        var keywords = "#{keywords}";
+    
+    script(src="javascript/amcharts.js")

@@ -1,0 +1,37 @@
+{
+  "name": "cab432_ass2",
+  "version": "1.0.0",
+  "description": "CAB432 Assessment 2",
+  "main": "app.js",
+  "dependencies": {
+    "aws-sdk": "^2.554.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "helmet": "^3.20.1",
+    "morgan": "^1.9.1",
+    "natural": "^0.6.3",
+    "package": "^1.0.1",
+    "pug": "^2.0.4",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "response-time": "^2.3.2",
+    "stopword": "^0.3.3",
+    "twitter": "^1.7.1"
+  },
+  "scripts": {
+    "watch": "nodemon ./start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://lunamclaren@bitbucket.org/lunamclaren/cab432_ass2.git"
+  },
+  "author": "Kevin Duong, Luna McLaren",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/lunamclaren/cab432_ass2#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

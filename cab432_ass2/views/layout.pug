@@ -1,0 +1,17 @@
+doctype html
+html
+    block head
+        title= `${title}`
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        // Bootstrap & CSS
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/styles.css' type='text/css')
+        // JS scripts
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+        script(src='/javascript/validation.js')
+
+    block searchbar
+    
+    body.container.bg-dark
+        block content

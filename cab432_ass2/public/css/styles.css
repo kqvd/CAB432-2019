@@ -1,0 +1,29 @@
+/* word cloud animation */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#chartdiv {
+    width: 100%;
+    height: 500px;
+}
+
+/* validation (off by default) */
+
+#error {
+    display:none;
+    color: red;
+    position: absolute;
+    z-index: 1;
+}
+
+/* search page */
+
+.tweet-card {
+    background-color: #1F272F;
+    width: 100%;
+}
+
+/* summary page */
+

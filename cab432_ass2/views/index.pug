@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    div.jumbotron.bg-dark.text-white.myauto
+        h1 Enter Query
+        form(method="GET", action='/search', onsubmit='return validation()')
+            div.form-inline
+                input.col-9.form-control#myInput(required=true, name='search', type='search')
+                button.col-3.btn.btn-outline-info(type='submit') Search
+        #error Invalid Query Submission! Please insert a &apos;#&apos; in front of a query and leave a &apos;,&apos; after each word.
+        #chart
