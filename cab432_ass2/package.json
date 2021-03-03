@@ -14,7 +14,7 @@
     "morgan": "^1.9.1",
     "natural": "^0.6.3",
     "package": "^1.0.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "redis": "^2.8.0",
     "request": "^2.88.0",
     "response-time": "^2.3.2",
