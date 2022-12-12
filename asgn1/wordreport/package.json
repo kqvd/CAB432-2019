@@ -9,7 +9,7 @@
   "author": "Kevin Duong <n9934731@qut.edu.au>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-server": "^0.11.1",
     "pug": "^2.0.4"
   }
